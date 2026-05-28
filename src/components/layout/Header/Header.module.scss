@@ -1,0 +1,36 @@
+.header {
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 253, 248, 0.92);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.75rem;
+}
+
+.brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--color-muted);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+}

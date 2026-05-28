@@ -1,0 +1,38 @@
+.footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0 3rem;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.text {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+  }
+}

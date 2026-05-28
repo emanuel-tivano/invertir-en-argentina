@@ -1,0 +1,43 @@
+.hero {
+  padding: 5rem 0 2rem;
+}
+
+.inner {
+  padding: 2rem 0 1rem;
+}
+
+.copy {
+  max-width: 48rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.copy h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1.05;
+}
+
+.description {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 1.12rem;
+}
+
+.cta {
+  display: inline-flex;
+  margin-top: 2rem;
+  padding: 0.9rem 1.35rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #f8fbfc;
+  font-weight: 700;
+}
