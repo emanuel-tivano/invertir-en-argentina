@@ -21,7 +21,7 @@ export function Footer() {
               <Link href={ROUTES.home}>Inicio</Link>
             </li>
             <li>
-              <Link href={ROUTES.investments}>Inversiones</Link>
+              <Link href={ROUTES.homeCategories}>Categorías principales</Link>
             </li>
           </ul>
         </nav>

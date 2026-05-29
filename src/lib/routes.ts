@@ -2,9 +2,9 @@ import type { InvestmentCategorySlug } from "@/types/investment";
 
 export const ROUTES = {
   home: "/",
-  investments: "/inversiones",
+  homeCategories: "/#categorias-principales",
 } as const;
 
 export function categoryRoute(slug: InvestmentCategorySlug) {
-  return `${ROUTES.investments}/${slug}`;
+  return `/inversiones/${slug}`;
 }

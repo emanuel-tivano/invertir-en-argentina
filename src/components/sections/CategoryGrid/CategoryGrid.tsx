@@ -5,18 +5,20 @@ import { CategoryCard } from "@/components/cards/CategoryCard/CategoryCard";
 import styles from "./CategoryGrid.module.scss";
 
 type CategoryGridProps = {
+  id?: string;
   title: string;
   description: string;
   categories: InvestmentCategory[];
 };
 
 export function CategoryGrid({
+  id,
   title,
   description,
   categories,
 }: CategoryGridProps) {
   return (
-    <section className={`container ${styles.section}`}>
+    <section id={id} className={`container ${styles.section}`}>
       <div className={styles.pageIntro}>
         <h2>{title}</h2>
         <p>{description}</p>

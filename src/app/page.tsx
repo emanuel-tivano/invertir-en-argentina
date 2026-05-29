@@ -17,6 +17,7 @@ export default function Home() {
     <>
       <HomeHero />
       <CategoryGrid
+        id="categorias-principales"
         title="Categorías principales"
         description="Un punto de partida claro para explorar instrumentos y estrategias frecuentes del mercado argentino."
         categories={investmentCategories}

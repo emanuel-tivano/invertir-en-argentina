@@ -1,10 +1,16 @@
 :root {
-  --color-background: #f4f1ea;
-  --color-surface: #fffdf8;
-  --color-text: #1d2a32;
-  --color-muted: #5f6f79;
-  --color-border: #d9d3c7;
-  --color-primary: #0f5b78;
+  --color-primary: #123c4a;
+  --color-primary-dark: #0b2530;
+  --color-secondary: #1f7a4d;
+  --color-accent: #c49a3a;
+  --color-background: #f7f3ea;
+  --color-surface: #fffcf6;
+  --color-text: #1c2529;
+  --color-text-muted: #5e6a70;
+  --color-border: #ddd5c8;
+  --color-success: #1f7a4d;
+  --color-warning: #c49a3a;
+  --color-danger: #b94a3a;
   --max-width: 72rem;
 }
 
@@ -47,6 +53,11 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus-visible {
+  color: var(--color-primary);
+}
+
 button,
 input,
 textarea,
@@ -82,6 +93,6 @@ select {
 
 .page-intro p {
   margin: 1rem 0 0;
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   font-size: 1.05rem;
 }

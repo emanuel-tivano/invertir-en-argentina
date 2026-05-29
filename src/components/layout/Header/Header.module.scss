@@ -1,6 +1,6 @@
 .header {
   border-bottom: 1px solid var(--color-border);
-  background: rgba(255, 253, 248, 0.92);
+  background: rgba(255, 252, 246, 0.94);
 }
 
 .inner {
@@ -9,28 +9,58 @@
   justify-content: space-between;
   gap: 1.5rem;
   min-height: 4.75rem;
+  padding: 0.9rem 0;
 }
 
 .brand {
+  flex-shrink: 0;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  color: var(--color-primary-dark);
 }
 
 .navList {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  color: var(--color-muted);
+  color: var(--color-text-muted);
+}
+
+.navList a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.navList a:hover,
+.navList a:focus-visible {
+  color: var(--color-primary);
+}
+
+.activeLink {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-accent);
 }
 
 @media (max-width: 640px) {
   .inner {
     flex-direction: column;
     justify-content: center;
-    padding: 1rem 0;
+    align-items: flex-start;
+  }
+
+  .navList {
+    gap: 0.5rem 1rem;
   }
 }

@@ -1,18 +1,57 @@
 .hero {
-  padding: 5rem 0 2rem;
+  padding: 4.5rem 0 2rem;
 }
 
 .inner {
-  padding: 2rem 0 1rem;
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(24rem, 58vw, 34rem);
+  padding: clamp(2rem, 5vw, 3.75rem);
+  border: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent);
+  border-radius: 1.75rem;
+  background-color: var(--color-primary-dark);
+  background-image:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary-dark) 88%, transparent),
+      color-mix(in srgb, var(--color-primary) 58%, transparent)
+    ),
+    url("/images/bcba.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 24px 48px rgba(11, 37, 48, 0.16);
+  display: flex;
+  align-items: center;
+}
+
+.inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 37, 48, 0.12), rgba(11, 37, 48, 0.44)),
+    linear-gradient(120deg, rgba(196, 154, 58, 0.18), transparent 46%);
+}
+
+.inner::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 48%;
+  background: linear-gradient(180deg, transparent, rgba(11, 37, 48, 0.56));
 }
 
 .copy {
+  position: relative;
+  z-index: 1;
   max-width: 48rem;
+  color: var(--color-surface);
 }
 
 .eyebrow {
   margin: 0 0 1rem;
-  color: var(--color-primary);
+  color: color-mix(in srgb, var(--color-accent) 80%, white);
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -23,21 +62,64 @@
   margin: 0;
   font-size: clamp(2.5rem, 5vw, 4.4rem);
   line-height: 1.05;
+  color: var(--color-surface);
+  text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
 .description {
   max-width: 42rem;
   margin: 1.5rem 0 0;
-  color: var(--color-muted);
+  color: rgba(255, 252, 246, 0.88);
   font-size: 1.12rem;
 }
 
 .cta {
   display: inline-flex;
+  align-items: center;
   margin-top: 2rem;
   padding: 0.9rem 1.35rem;
   border-radius: 999px;
-  background: var(--color-primary);
-  color: #f8fbfc;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
   font-weight: 700;
+  box-shadow: 0 0.9rem 1.8rem rgba(11, 37, 48, 0.18);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  color: var(--color-primary-dark);
+  background: color-mix(in srgb, var(--color-accent) 88%, white);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .inner {
+    min-height: 26rem;
+    align-items: center;
+    background-position: center 35%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .inner {
+    min-height: 23rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    background-position: center 30%;
+  }
+
+  .copy h1 {
+    font-size: clamp(2.2rem, 10vw, 3.25rem);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
 }

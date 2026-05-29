@@ -1,7 +1,8 @@
 .footer {
   margin-top: 4rem;
   border-top: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background: var(--color-primary-dark);
+  color: var(--color-surface);
 }
 
 .inner {
@@ -19,7 +20,7 @@
 .text {
   max-width: 40rem;
   margin: 0;
-  color: var(--color-muted);
+  color: rgba(255, 252, 246, 0.72);
 }
 
 .links {
@@ -28,7 +29,12 @@
   padding: 0;
   display: grid;
   gap: 0.75rem;
-  color: var(--color-muted);
+  color: rgba(255, 252, 246, 0.72);
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: color-mix(in srgb, var(--color-accent) 80%, white);
 }
 
 @media (max-width: 640px) {

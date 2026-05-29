@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { getCategoryBySlug } from "@/content/investmentCategories";
 import { getInstrumentsByIds } from "@/content/instruments";
+import { ROUTES } from "@/lib/routes";
 import type { InvestmentCategorySlug } from "@/types/investment";
 import styles from "@/components/sections/CategoryGrid/CategoryGrid.module.scss";
 
@@ -18,7 +19,8 @@ export function CategoryPage({ slug }: CategoryPageProps) {
       <div className={styles.pageIntro}>
         <nav aria-label="Breadcrumb">
           <p className={styles.breadcrumbs}>
-            <Link href="/">Inicio</Link> / <Link href="/inversiones">Inversiones</Link> /{" "}
+            <Link href={ROUTES.home}>Inicio</Link> /{" "}
+            <Link href={ROUTES.homeCategories}>Categorías principales</Link> /{" "}
             <span>{category.title}</span>
           </p>
         </nav>

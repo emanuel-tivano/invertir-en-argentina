@@ -15,7 +15,7 @@ export function HomeHero() {
             Guías simples para entender instrumentos financieros, riesgos, plazos,
             monedas y alternativas de inversión en el mercado argentino.
           </p>
-          <Link href={ROUTES.investments} className={styles.cta}>
+          <Link href={ROUTES.homeCategories} className={styles.cta}>
             Explorar inversiones
           </Link>
         </div>
