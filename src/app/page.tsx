@@ -3,7 +3,11 @@ import type { Metadata } from "next";
 import { CategoryGrid } from "@/components/sections/CategoryGrid/CategoryGrid";
 import { HomeHero } from "@/components/sections/HomeHero/HomeHero";
 import { investmentCategories } from "@/content/investmentCategories";
-import { createMetadata } from "@/lib/seo";
+import {
+  createJsonLdScriptProps,
+  createMetadata,
+  createWebSiteJsonLd,
+} from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Invertir en Argentina",
@@ -15,6 +19,10 @@ export const metadata: Metadata = createMetadata({
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLdScriptProps(createWebSiteJsonLd())}
+      />
       <HomeHero />
       <CategoryGrid
         id="categorias-principales"

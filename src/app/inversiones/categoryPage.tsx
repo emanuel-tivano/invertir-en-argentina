@@ -3,6 +3,11 @@ import Link from "next/link";
 import { getCategoryBySlug } from "@/content/investmentCategories";
 import { getInstrumentsByIds } from "@/content/instruments";
 import { ROUTES } from "@/lib/routes";
+import {
+  createBreadcrumbListJsonLd,
+  createCategoryCollectionPageJsonLd,
+  createJsonLdScriptProps,
+} from "@/lib/seo";
 import type { InvestmentCategorySlug } from "@/types/investment";
 import styles from "@/components/sections/CategoryGrid/CategoryGrid.module.scss";
 
@@ -16,6 +21,22 @@ export function CategoryPage({ slug }: CategoryPageProps) {
 
   return (
     <section className="container">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLdScriptProps(
+          createBreadcrumbListJsonLd([
+            { name: "Inicio", path: ROUTES.home },
+            { name: "Categorías principales", path: ROUTES.homeCategories },
+            { name: category.title, path: category.path },
+          ]),
+        )}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLdScriptProps(
+          createCategoryCollectionPageJsonLd(category, instruments),
+        )}
+      />
       <div className={styles.pageIntro}>
         <nav aria-label="Breadcrumb">
           <p className={styles.breadcrumbs}>

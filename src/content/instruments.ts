@@ -160,7 +160,7 @@ const instruments: Instrument[] = [
 
 export function getInstrumentsByIds(ids: string[]) {
   return ids.map((id) => {
-    const instrument = instruments.find((item) => item.name === id);
+    const instrument = instruments.find((item) => item.slug === id);
 
     if (!instrument) {
       throw new Error(`Instrument not found: ${id}`);
